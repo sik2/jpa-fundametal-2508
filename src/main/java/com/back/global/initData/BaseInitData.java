@@ -15,6 +15,7 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 @Configuration
+// dev, test, prod 등 활성화된 프로파일에 상관없이 항상 실행
 public class BaseInitData {
     @Autowired
     @Lazy

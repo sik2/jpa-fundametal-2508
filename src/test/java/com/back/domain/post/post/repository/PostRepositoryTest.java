@@ -43,6 +43,6 @@ public class PostRepositoryTest {
     @DisplayName("글 조회")
     void t3() {
         long count = postRepository.count();
-        assertThat(count).isEqualTo(2); // 현재 글이 2개 있다고 가정
+        assertThat(count).isEqualTo(4); // 현재 글이 4개 있다고 가정
     }
 }
