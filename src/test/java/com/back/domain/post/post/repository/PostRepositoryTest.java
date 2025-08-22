@@ -5,10 +5,12 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
+@ActiveProfiles("test")
 @Transactional
 @SpringBootTest
 public class PostRepositoryTest {
@@ -41,6 +43,6 @@ public class PostRepositoryTest {
     @DisplayName("글 조회")
     void t3() {
         long count = postRepository.count();
-        assertThat(count).isEqualTo(9); // 현재 글이 9개 있다고 가정
+        assertThat(count).isEqualTo(2); // 현재 글이 2개 있다고 가정
     }
 }
