@@ -34,4 +34,11 @@ public class PostRepositoryTest {
         assertThat(post.getTitle()).isEqualTo("새 제목");
         assertThat(post.getContent()).isEqualTo("새 내용");
     }
+
+    @Test
+    @DisplayName("글 조회")
+    void t3() {
+        long count = postRepository.count();
+        assertThat(count).isEqualTo(8); // 현재 글이 8개 있다고 가정
+    }
 }
