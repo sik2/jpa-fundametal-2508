@@ -36,10 +36,8 @@ public class BaseInitData {
     void work1() {
         if (postService.count() > 0) return;
 
-        Post post1 = postService.save( new Post("제목 1", "내용 1"));
-        // INSERT INTO post SET title = '제목 1';
-        Post post2 = postService.save(new Post("제목 2", "내용 2"));
-        // INSERT INTO post SET title = '제목 2';
+        Post post1 = postService.write("제목 1", "내용 1");
+        Post post2 = postService.write("제목 2", "내용 2");
 
         System.out.println("post1.getId() : " +  post1.getId());
         System.out.println("post2.getId() : " +  post2.getId());

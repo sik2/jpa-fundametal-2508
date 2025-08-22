@@ -33,4 +33,10 @@ public class PostService {
         postRepository.save(post);
         // UPDATE post SET title = ?, content = ?, modifyDate = ? where id = ?
     }
+
+    public Post write(String title, String content) {
+        Post post = new Post(title, content);
+
+        return postRepository.save(post);
+    }
 }
