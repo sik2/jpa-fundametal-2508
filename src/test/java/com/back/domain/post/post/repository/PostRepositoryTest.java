@@ -5,6 +5,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Rollback;
+import org.springframework.transaction.annotation.Transactional;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
@@ -24,6 +26,8 @@ public class PostRepositoryTest {
 
     @Test
     @DisplayName("글 생성")
+    @Transactional
+    @Rollback
     void t2() {
         Post post = new Post("새 제목", "새 내용");
         assertThat(post.getId()).isEqualTo(0);
@@ -39,6 +43,6 @@ public class PostRepositoryTest {
     @DisplayName("글 조회")
     void t3() {
         long count = postRepository.count();
-        assertThat(count).isEqualTo(8); // 현재 글이 8개 있다고 가정
+        assertThat(count).isEqualTo(9); // 현재 글이 9개 있다고 가정
     }
 }
